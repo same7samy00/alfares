@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الفارس - AL Fares | وكيل عام معتمد لخدمات الدفع الإلكتروني</title>
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/vmC5bKr8/3.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap');
+        
+        * {
+            font-family: 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        html {
+            font-size: 15px;
+            scroll-behavior: smooth;
+        }
+        
+        /* Microsoft Colors */
+        .ms-blue { background-color: #0078d4; }
+        .ms-green { background-color: #107c10; }
+        .ms-orange { background-color: #ff8c00; }
+        .ms-red { background-color: #d13438; }
+        .ms-purple { background-color: #5c2d91; }
+        .ms-teal { background-color: #008272; }
+        
+        .ms-blue-light { background-color: #40e0ff; }
+        .ms-green-light { background-color: #00bcf2; }
+        
+        /* Microsoft Card Style */
+        .ms-card {
+            background: #ffffff;
+            border: 1px solid #e1e1e1;
+            border-radius: 12px;
+            transition: all 0.2s ease;
+        }
+        
+        .ms-card:hover {
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            transform: translateY(-2px);
+        }
+        
+        /* Microsoft Button Style */
+        .ms-button {
+            background: #0078d4;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 12px 24px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        
+        .ms-button:hover {
+            background: #106ebe;
+        }
+        
+        .ms-button-outline {
+            background: transparent;
+            color: #0078d4;
+            border: 2px solid #0078d4;
+            border-radius: 12px;
+            padding: 10px 22px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        
+        .ms-button-outline:hover {
+            background: #0078d4;
+            color: white;
+        }
+        
+        /* Microsoft Typography */
+        .ms-title {
+            font-weight: 300;
+            letter-spacing: -0.02em;
+        }
+        
+        .ms-subtitle {
+            font-weight: 400;
+            color: #605e5c;
+        }
+        
+        /* Microsoft Grid System */
+        .ms-grid {
+            display: grid;
+            gap: 24px;
+        }
+        
+        /* Microsoft Hero Section */
+        .ms-hero {
+            background: linear-gradient(135deg, #0078d4 0%, #40e0ff 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        /* Microsoft Navigation */
+        .ms-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid #e1e1e1;
+        }
+        
+        /* Microsoft Fluent Design */
+        .ms-fluent {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+        }
+        
+        /* Microsoft Animations */
+        .ms-fade-in {
+            animation: msFadeIn 0.6s ease-out;
+        }
+        
+        @keyframes msFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Microsoft Service Cards */
+        .ms-service-card {
+            background: white;
+            border-left: 4px solid #0078d4;
+            border-radius: 12px;
+            padding: 32px;
+            transition: all 0.3s ease;
+        }
+        
+        .ms-service-card:hover {
+            border-left-color: #40e0ff;
+            box-shadow: 0 8px 25px rgba(0, 120, 212, 0.15);
+        }
+        
+        /* Microsoft Comments Scroll */
+        .ms-comments-scroll {
+            animation: msScrollUp 120s linear infinite;
+        }
+        
+        @keyframes msScrollUp {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-50%); }
+        }
+        
+        /* Manual comments scroll setup */
+        .ms-comments-wrapper {
+            height: 24rem;
+            overflow-y: auto;
+            border-radius: 12px;
+            scroll-snap-type: y mandatory;
+            scroll-behavior: smooth;
+        }
+        .ms-comment-card {
+            scroll-snap-align: start;
+        }
+        
+        /* Microsoft Form Styles */
+        .ms-input {
+            border: 2px solid #e1e1e1;
+            border-radius: 12px;
+            padding: 12px 16px;
+            font-size: 16px;
+            transition: all 0.2s ease;
+            background: white;
+        }
+        
+        .ms-input:focus {
+            border-color: #0078d4;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(0, 120, 212, 0.2);
+        }
+        
+        /* Microsoft Stats */
+        .ms-stat {
+            text-align: center;
+            padding: 24px;
+            border-radius: 12px !important;
+        }
+        
+        .ms-stat-number {
+            font-size: 3rem;
+            font-weight: 300;
+            color: #0078d4;
+            line-height: 1;
+        }
+        
+        /* Microsoft Company Logos */
+        .ms-company-card {
+            background: white;
+            border: 1px solid #e1e1e1;
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+        
+        .ms-company-card:hover {
+            border-color: #0078d4;
+            box-shadow: 0 4px 15px rgba(0, 120, 212, 0.1);
+        }
+        
+        /* Microsoft WhatsApp Button */
+        .ms-whatsapp {
+            background: #25d366;
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            z-index: 1000;
+        }
+        
+        .ms-whatsapp:hover {
+            background: #128c7e;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+        
+        /* Microsoft Section Spacing */
+        .ms-section {
+            padding: 64px 0;
+        }
+        
+        .ms-section-alt {
+            background: #f8f9fa;
+        }
+        
+        /* Global rounded corners for bordered blocks inside sections */
+        .ms-section .border {
+            border-radius: 12px;
+        }
+        
+        /* Toast notification */
+        .ms-toast {
+            position: fixed;
+            top: 88px;
+            right: 24px;
+            background: #16a34a; /* green-600 */
+            color: #ffffff;
+            padding: 12px 16px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            opacity: 0;
+            transform: translateY(-8px);
+            pointer-events: none;
+            transition: opacity .3s ease, transform .3s ease;
+            z-index: 1100;
+        }
+        .ms-toast.show {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Microsoft Style Navigation -->
+    <nav class="ms-nav fixed top-0 w-full z-50 py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://i.postimg.cc/vmC5bKr8/3.png" alt="الفارس" class="w-8 h-8 ml-3" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div class="w-8 h-8 ms-blue ml-3" style="display:none;"></div>
+                <span class="text-2xl font-semibold text-gray-800">الفارس - AL Fares</span>
+            </div>
+            <div class="hidden md:flex space-x-8 space-x-reverse">
+                <a href="#home" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">الرئيسية</a>
+                <a href="#about" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">من أنا</a>
+                <a href="#services" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">الخدمات</a>
+                <a href="#testimonials" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">الآراء</a>
+                <a href="#partners" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">الشركاء</a>
+                <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">التواصل</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Microsoft Style Hero Section -->
+    <section id="home" class="ms-hero">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+            <div class="text-white">
+                <h1 class="text-6xl md:text-8xl ms-title mb-6">الفارس - AL Fares</h1>
+                <p class="text-xl md:text-2xl mb-8 font-medium">وكيل عام معتمد لخدمات الدفع الإلكتروني</p>
+                <div class="flex flex-wrap gap-4">
+                    <button class="ms-button px-8 py-4 text-lg font-semibold">ابدأ الآن</button>
+                    <button class="ms-button-outline px-8 py-4 text-lg font-semibold bg-white text-blue-600 border-white hover:bg-gray-100">تعرف أكثر</button>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-6">
+                <div class="ms-stat ms-fluent" style="border-radius: 0;">
+                    <div class="ms-stat-number text-white">500+</div>
+                    <p class="text-white font-medium">عميل راضي</p>
+                </div>
+                <div class="ms-stat ms-fluent" style="border-radius: 0;">
+                    <div class="ms-stat-number text-white">10+</div>
+                    <p class="text-white font-medium">شركة شريكة</p>
+                </div>
+                <div class="ms-stat ms-fluent" style="border-radius: 0;">
+                    <div class="ms-stat-number text-white">24/7</div>
+                    <p class="text-white font-medium">دعم مستمر</p>
+                </div>
+                <div class="ms-stat ms-fluent" style="border-radius: 0;">
+                    <div class="ms-stat-number text-white">100%</div>
+                    <p class="text-white font-medium">أمان</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Microsoft Style About Section -->
+    <section id="about" class="ms-section">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl md:text-6xl ms-title text-gray-800 mb-4">من أنا</h2>
+                <p class="text-xl ms-subtitle max-w-2xl mx-auto">تعرف على قصتي ورؤيتي في مجال الدفع الإلكتروني</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="ms-card p-8">
+                        <div class="flex items-start mb-4">
+                            <div class="w-12 h-12 ms-blue flex items-center justify-center ml-4" style="border-radius: 5px;">
+                                <i class="fas fa-user-tie text-white text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-semibold text-gray-800 mb-2">فارس عبد الرحمن</h3>
+                                <p class="text-gray-600 text-lg">وكيل عام معتمد لعدد من أكبر شركات الدفع الإلكتروني في مصر.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="ms-card p-8">
+                        <div class="flex items-start mb-4">
+                            <div class="w-12 h-12 ms-green flex items-center justify-center ml-4" style="border-radius: 5px;">
+                                <i class="fas fa-bullseye text-white text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-semibold text-gray-800 mb-2">رؤيتي</h3>
+                                <p class="text-gray-600 text-lg">توفير حلول دفع إلكتروني سهلة وآمنة للعملاء والتجار في جميع أنحاء مصر.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="ms-card p-8">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 ms-red flex items-center justify-center ml-4" style="border-radius: 5px;">
+                                <i class="fas fa-heart text-white text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-semibold text-gray-800 mb-2">التزامي</h3>
+                                <p class="text-gray-600 text-lg">خدمة محترمة وسريعة بأعلى جودة وأرخص الأسعار، لأن ثقتكم هي دافعي للنجاح.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="ms-grid grid-cols-2">
+                    <div class="ms-card p-6 text-center">
+                        <div class="w-16 h-16 ms-blue flex items-center justify-center mx-auto mb-4" style="border-radius: 5px;">
+                            <i class="fas fa-shield-alt text-white text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg text-gray-800">أمان مطلق</h3>
+                        <p class="text-gray-600 mt-2">حماية كاملة لجميع المعاملات</p>
+                    </div>
+                    <div class="ms-card p-6 text-center">
+                        <div class="w-16 h-16 ms-green flex items-center justify-center mx-auto mb-4" style="border-radius: 5px;">
+                            <i class="fas fa-rocket text-white text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg text-gray-800">سرعة فائقة</h3>
+                        <p class="text-gray-600 mt-2">معالجة فورية للطلبات</p>
+                    </div>
+                    <div class="ms-card p-6 text-center">
+                        <div class="w-16 h-16 ms-orange flex items-center justify-center mx-auto mb-4" style="border-radius: 5px;">
+                            <i class="fas fa-dollar-sign text-white text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg text-gray-800">أسعار عادلة</h3>
+                        <p class="text-gray-600 mt-2">أفضل الأسعار في السوق</p>
+                    </div>
+                    <div class="ms-card p-6 text-center">
+                        <div class="w-16 h-16 ms-purple flex items-center justify-center mx-auto mb-4" style="border-radius: 5px;">
+                            <i class="fas fa-headset text-white text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg text-gray-800">دعم 24/7</h3>
+                        <p class="text-gray-600 mt-2">خدمة عملاء مستمرة</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Microsoft Style Services Section -->
+    <section id="services" class="ms-section ms-section-alt">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl md:text-6xl ms-title text-gray-800 mb-4">خدماتي</h2>
+                <p class="text-xl ms-subtitle max-w-2xl mx-auto">حلول شاملة لجميع احتياجات الدفع الإلكتروني</p>
+            </div>
+            
+            <div class="ms-grid grid-cols-1 md:grid-cols-3">
+                <div class="ms-service-card">
+                    <div class="w-16 h-16 ms-blue flex items-center justify-center mb-6" style="border-radius: 5px;">
+                        <i class="fas fa-credit-card text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">شحن ماكينات الدفع</h3>
+                    <p class="text-gray-600 text-lg mb-6">خدمة شحن سريعة وآمنة لجميع أنواع ماكينات الدفع الإلكتروني مع ضمان الجودة والأمان.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-green-600 ml-2"></i>
+                            شحن فوري خلال دقائق
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-green-600 ml-2"></i>
+                            أمان وحماية عالية
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-green-600 ml-2"></i>
+                            دعم جميع الأنواع
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="ms-service-card">
+                    <div class="w-16 h-16 ms-green flex items-center justify-center mb-6" style="border-radius: 5px;">
+                        <i class="fas fa-wallet text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">شحن حسابات الدفع</h3>
+                    <p class="text-gray-600 text-lg mb-6">شحن فوري لحساباتك في جميع منصات الدفع الإلكتروني بأفضل الأسعار والخدمة.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-green-600 ml-2"></i>
+                            تحويل سريع ومضمون
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-green-600 ml-2"></i>
+                            رسوم منخفضة جداً
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-green-600 ml-2"></i>
+                            جميع المنصات متاحة
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="ms-service-card">
+                    <div class="w-16 h-16 ms-orange flex items-center justify-center mb-6" style="border-radius: 5px;">
+                        <i class="fas fa-store text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">بيع الماكينات</h3>
+                    <p class="text-gray-600 text-lg mb-6">ماكينات أصلية معتمدة من أفضل الشركات مع ضمان شامل وخدمة ما بعد البيع.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-green-600 ml-2"></i>
+                            ضمان شامل لسنتين
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-green-600 ml-2"></i>
+                            أسعار تنافسية
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-green-600 ml-2"></i>
+                            خدمة ما بعد البيع
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Microsoft Style Testimonials Section -->
+    <section id="testimonials" class="ms-section">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl md:text-6xl ms-title text-gray-800 mb-4">آراء العملاء</h2>
+                <p class="text-xl ms-subtitle max-w-2xl mx-auto">شهادات حقيقية من عملائنا الكرام</p>
+            </div>
+            
+            <!-- Comments Display -->
+            <div class="mb-12">
+                <div class="h-96 overflow-y-auto bg-gray-50 border border-gray-200 p-8 ms-comments-wrapper" style="border-radius: 5px;">
+                    <div id="commentsContainer" class="space-y-6">
+                        <!-- Comments will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add Comment Form -->
+            <div class="ms-card p-8 max-w-4xl mx-auto">
+                <div class="text-center mb-8">
+                    <h3 class="text-3xl font-semibold text-gray-800 mb-2">شاركنا تجربتك</h3>
+                    <p class="text-gray-600">رأيك يهمنا ويساعدنا على التطوير المستمر</p>
+                </div>
+                <form id="commentForm" class="space-y-6">
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">الاسم الكريم *</label>
+                            <input type="text" id="userName" required class="ms-input w-full">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">البريد الإلكتروني *</label>
+                            <input type="email" id="userEmail" required class="ms-input w-full">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">رقم الهاتف *</label>
+                            <input type="tel" id="userPhone" required class="ms-input w-full">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">التعليق *</label>
+                        <textarea id="userComment" required rows="4" class="ms-input w-full" placeholder="شاركنا رأيك وتجربتك معنا"></textarea>
+                    </div>
+                    <button type="submit" class="ms-button w-full py-4 text-lg">
+                        إرسال التعليق
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Microsoft Style Partners Section -->
+    <section id="partners" class="ms-section ms-section-alt">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl md:text-6xl ms-title text-gray-800 mb-4">شركاؤنا</h2>
+                <p class="text-xl ms-subtitle max-w-2xl mx-auto">نفتخر بشراكتنا مع أكبر شركات الدفع الإلكتروني</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+                <div class="ms-company-card">
+                    <img src="https://yourimageshare.com/ib/aC7tEhyElj.png" alt="فوري" class="max-h-16 w-auto mx-auto mb-3" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div style="display:none;">
+                        <i class="fas fa-mobile-alt text-4xl text-blue-600 mb-2"></i>
+                        <p class="font-semibold text-gray-800">فوري</p>
+                    </div>
+                </div>
+                <div class="ms-company-card">
+                    <img src="https://yourimageshare.com/ib/qfwlyPsBKA.png" alt="أمان" class="max-h-16 w-auto mx-auto mb-3" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div style="display:none;">
+                        <i class="fas fa-shield-alt text-4xl text-green-600 mb-2"></i>
+                        <p class="font-semibold text-gray-800">أمان</p>
+                    </div>
+                </div>
+                <div class="ms-company-card">
+                    <img src="https://yourimageshare.com/ib/joRpogedt1.png" alt="كاش مصر" class="max-h-16 w-auto mx-auto mb-3" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div style="display:none;">
+                        <i class="fas fa-money-bill-wave text-4xl text-yellow-600 mb-2"></i>
+                        <p class="font-semibold text-gray-800">كاش مصر</p>
+                    </div>
+                </div>
+                <div class="ms-company-card">
+                    <img src="https://yourimageshare.com/ib/JDIDo4pObU.png" alt="مصاري" class="max-h-16 w-auto mx-auto mb-3" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div style="display:none;">
+                        <i class="fas fa-coins text-4xl text-orange-600 mb-2"></i>
+                        <p class="font-semibold text-gray-800">مصاري</p>
+                    </div>
+                </div>
+                <div class="ms-company-card">
+                    <img src="https://yourimageshare.com/ib/759dBAHcWh.png" alt="بساطة" class="max-h-16 w-auto mx-auto mb-3" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div style="display:none;">
+                        <i class="fas fa-hand-holding-usd text-4xl text-purple-600 mb-2"></i>
+                        <p class="font-semibold text-gray-800">بساطة</p>
+                    </div>
+                </div>
+                <div class="ms-company-card">
+                    <img src="https://yourimageshare.com/ib/XUh2iDwuAu.png" alt="الأهلي ممكن" class="max-h-16 w-auto mx-auto mb-3" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div style="display:none;">
+                        <i class="fas fa-university text-4xl text-red-600 mb-2"></i>
+                        <p class="font-semibold text-gray-800">الأهلي ممكن</p>
+                    </div>
+                </div>
+                <div class="ms-company-card">
+                    <img src="https://yourimageshare.com/ib/5bZZ85Ezhz.png" alt="سداد" class="max-h-16 w-auto mx-auto mb-3" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div style="display:none;">
+                        <i class="fas fa-credit-card text-4xl text-indigo-600 mb-2"></i>
+                        <p class="font-semibold text-gray-800">سداد</p>
+                    </div>
+                </div>
+                <div class="ms-company-card">
+                    <img src="https://yourimageshare.com/ib/knxkprXox4.png" alt="ضامن" class="max-h-16 w-auto mx-auto mb-3" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div style="display:none;">
+                        <i class="fas fa-check-circle text-4xl text-teal-600 mb-2"></i>
+                        <p class="font-semibold text-gray-800">ضامن</p>
+                    </div>
+                </div>
+                <div class="ms-company-card">
+                    <img src="https://yourimageshare.com/ib/yGdw2xaWtE.png" alt="خالص" class="max-h-16 w-auto mx-auto mb-3" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div style="display:none;">
+                        <i class="fas fa-dollar-sign text-4xl text-pink-600 mb-2"></i>
+                        <p class="font-semibold text-gray-800">خالص</p>
+                    </div>
+                </div>
+                <div class="ms-company-card">
+                    <img src="https://yourimageshare.com/ib/7iwrR8hW0K.png" alt="جيديا" class="max-h-16 w-auto mx-auto mb-3" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div style="display:none;">
+                        <i class="fas fa-wallet text-4xl text-cyan-600 mb-2"></i>
+                        <p class="font-semibold text-gray-800">جيديا</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Microsoft Style Contact Section -->
+    <section id="contact" class="ms-section">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="mb-16">
+                <h2 class="text-5xl md:text-6xl ms-title text-gray-800 mb-4">تواصل معنا</h2>
+                <p class="text-xl ms-subtitle">نحن هنا لخدمتك على مدار الساعة</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="ms-card p-8 text-center">
+                    <div class="w-16 h-16 ms-green flex items-center justify-center mx-auto mb-4" style="border-radius: 5px;">
+                        <i class="fab fa-whatsapp text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">واتساب</h3>
+                    <p class="text-gray-600">تواصل مباشر وسريع</p>
+                </div>
+                <div class="ms-card p-8 text-center">
+                    <div class="w-16 h-16 ms-blue flex items-center justify-center mx-auto mb-4" style="border-radius: 5px;">
+                        <i class="fas fa-clock text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">24/7</h3>
+                    <p class="text-gray-600">خدمة مستمرة</p>
+                </div>
+                <div class="ms-card p-8 text-center">
+                    <div class="w-16 h-16 ms-orange flex items-center justify-center mx-auto mb-4" style="border-radius: 5px;">
+                        <i class="fas fa-bolt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">رد فوري</h3>
+                    <p class="text-gray-600">استجابة سريعة</p>
+                </div>
+            </div>
+            
+            <a href="https://wa.me/201013803653" target="_blank" 
+               class="ms-button inline-flex items-center justify-center text-xl px-12 py-6">
+                <i class="fab fa-whatsapp text-2xl ml-3"></i>
+                واتساب: 01013803653
+            </a>
+        </div>
+    </section>
+
+    <!-- Microsoft Style Footer -->
+    <footer class="bg-gray-800 text-white py-12 px-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="mb-8">
+                <div class="flex items-center justify-center mb-4">
+                    <img src="https://i.postimg.cc/vmC5bKr8/3.png" alt="الفارس" class="w-8 h-8 ml-3" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div class="w-8 h-8 ms-blue ml-3" style="display:none;"></div>
+                    <h3 class="text-3xl font-semibold">الفارس - AL Fares</h3>
+                </div>
+                <p class="text-xl text-gray-300">وكيل عام معتمد لخدمات الدفع الإلكتروني</p>
+            </div>
+            <div class="border-t border-gray-600 pt-8">
+                <p class="text-gray-400">
+                    © 2025 الفارس - جميع الحقوق محفوظة
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Microsoft Style WhatsApp Button -->
+    <a href="https://wa.me/201013803653" target="_blank" class="ms-whatsapp">
+        <i class="fab fa-whatsapp text-2xl text-white"></i>
+    </a>
+
+    <div id="toast" class="ms-toast" role="status" aria-live="polite"></div>
+
+    <script>
+        // Sample comments data
+        const sampleComments = [
+            { name: "أحمد محمد", date: "2024-08-15", comment: "ماشاء الله عليك يا أستاذ فارس، خدمة ممتازة وسريعة جداً في شحن الماكينة" },
+            { name: "فاطمة علي", date: "2024-08-18", comment: "المهندس فارس محترم جداً وأسعاره كويسة، ربنا يبارك له" },
+            { name: "محمود حسن", date: "2024-08-22", comment: "تعامل راقي وخدمة سريعة، شكراً يا أستاذ فارس" },
+            { name: "نورا أحمد", date: "2024-08-25", comment: "أول مرة أتعامل معاه وخدمة فوق الممتاز، ربنا يوفقك" },
+            { name: "عمر سالم", date: "2024-08-28", comment: "الأستاذ فارس أمين وصادق، شحن الحساب في دقايق" },
+            { name: "مريم خالد", date: "2024-09-02", comment: "خدمة رائعة ومعاملة محترمة، شكراً جزيلاً" },
+            { name: "يوسف إبراهيم", date: "2024-09-05", comment: "المهندس فارس عنده ضمير في الشغل، ربنا يبارك له" },
+            { name: "سارة محمود", date: "2024-09-08", comment: "تعامل ممتاز وأسعار منافسة، أنصح بالتعامل معاه" },
+            { name: "كريم عادل", date: "2024-09-12", comment: "خدمة سريعة وموثوقة، شكراً يا أستاذ فارس" },
+            { name: "هدى سمير", date: "2024-09-15", comment: "أستاذ فارس محترم جداً وخدمته ممتازة" },
+            { name: "طارق فؤاد", date: "2024-09-18", comment: "تعامل راقي وخدمة فوق الوصف، ربنا يوفقك" },
+            { name: "ليلى حسام", date: "2024-09-22", comment: "المهندس فارس أمين وصدوق، أنصح بالتعامل معاه" },
+            { name: "حسام علي", date: "2024-09-25", comment: "خدمة ممتازة وسعر كويس، شكراً جزيلاً" },
+            { name: "دينا أشرف", date: "2024-09-28", comment: "تعامل محترم وخدمة سريعة، ربنا يبارك لك" },
+            { name: "رامي صلاح", date: "2024-10-02", comment: "الأستاذ فارس عنده ضمير في الشغل، خدمة ممتازة" },
+            { name: "منى عبدالله", date: "2024-10-05", comment: "خدمة رائعة ومعاملة طيبة، شكراً يا أستاذ فارس" },
+            { name: "وليد حمدي", date: "2024-10-08", comment: "تعامل ممتاز وأسعار منصفة، أنصح بالتعامل معاه" },
+            { name: "إيمان نبيل", date: "2024-10-12", comment: "المهندس فارس محترم جداً وخدمته فوق الممتاز" },
+            { name: "عبدالرحمن مصطفى", date: "2024-10-15", comment: "خدمة سريعة وموثوقة، ربنا يوفقك يا أستاذ فارس" },
+            { name: "ريم سعد", date: "2024-10-18", comment: "تعامل راقي وخدمة ممتازة، شكراً جزيلاً" },
+            { name: "خالد أحمد", date: "2024-10-20", comment: "الأستاذ فارس شخص أمين وصادق، خدمة ممتازة" },
+            { name: "نادية حسن", date: "2024-10-22", comment: "تعامل محترم وسعر عادل، ربنا يوفقك" },
+            { name: "محمد علي", date: "2024-10-25", comment: "خدمة سريعة وموثوقة، شكراً يا أستاذ فارس" },
+            { name: "سمر إبراهيم", date: "2024-10-28", comment: "المهندس فارس عنده ضمير في الشغل، أنصح بالتعامل معاه" },
+            { name: "عبدالله محمود", date: "2024-11-01", comment: "تعامل راقي وخدمة فوق الممتاز، ربنا يبارك له" },
+            { name: "ياسمين أحمد", date: "2024-11-03", comment: "خدمة رائعة ومعاملة طيبة، شكراً جزيلاً" },
+            { name: "حمدي سالم", date: "2024-11-05", comment: "الأستاذ فارس أمين وصدوق، خدمة ممتازة" },
+            { name: "رانيا خالد", date: "2024-11-08", comment: "تعامل ممتاز وأسعار منافسة، أنصح بالتعامل معاه" },
+            { name: "أسامة حسام", date: "2024-11-10", comment: "خدمة سريعة وموثوقة، ربنا يوفقك يا أستاذ فارس" },
+            { name: "لبنى عادل", date: "2024-11-12", comment: "المهندس فارس محترم جداً وخدمته فوق الممتاز" },
+            { name: "صلاح الدين", date: "2024-11-15", comment: "تعامل راقي وخدمة ممتازة، شكراً يا أستاذ فارس" },
+            { name: "هالة نبيل", date: "2024-11-18", comment: "خدمة رائعة ومعاملة محترمة، ربنا يبارك لك" },
+            { name: "عماد فؤاد", date: "2024-11-20", comment: "الأستاذ فارس عنده ضمير في الشغل، خدمة ممتازة" },
+            { name: "شيماء حمدي", date: "2024-11-22", comment: "تعامل ممتاز وسعر كويس، أنصح بالتعامل معاه" },
+            { name: "بسام علي", date: "2024-11-25", comment: "خدمة سريعة وموثوقة، شكراً جزيلاً" },
+            { name: "نهى محمد", date: "2024-11-28", comment: "المهندس فارس أمين وصادق، ربنا يوفقك" },
+            { name: "وائل إبراهيم", date: "2024-12-01", comment: "تعامل راقي وخدمة فوق الوصف، خدمة ممتازة" },
+            { name: "غادة سمير", date: "2024-12-03", comment: "خدمة رائعة ومعاملة طيبة، شكراً يا أستاذ فارس" },
+            { name: "كمال حسن", date: "2024-12-05", comment: "الأستاذ فارس محترم جداً وأسعاره عادلة" },
+            { name: "دعاء أحمد", date: "2024-12-08", comment: "تعامل ممتاز وخدمة سريعة، أنصح بالتعامل معاه" },
+            { name: "جمال عبدالله", date: "2024-12-10", comment: "خدمة موثوقة وسريعة، ربنا يبارك له" },
+            { name: "سلمى خالد", date: "2024-12-12", comment: "المهندس فارس عنده ضمير في الشغل، شكراً جزيلاً" },
+            { name: "فيصل محمود", date: "2024-12-15", comment: "تعامل راقي وخدمة ممتازة، ربنا يوفقك" },
+            { name: "رشا علي", date: "2024-12-18", comment: "خدمة رائعة ومعاملة محترمة، أستاذ فارس أمين" },
+            { name: "هشام سالم", date: "2024-12-20", comment: "الأستاذ فارس صادق وأمين، خدمة فوق الممتاز" },
+            { name: "إسراء حمدي", date: "2024-12-22", comment: "تعامل ممتاز وأسعار منصفة، شكراً يا أستاذ فارس" },
+            { name: "مصطفى نبيل", date: "2024-12-25", comment: "خدمة سريعة وموثوقة، ربنا يبارك لك" },
+            { name: "آية فؤاد", date: "2024-12-28", comment: "المهندس فارس محترم جداً وخدمته ممتازة" },
+            { name: "تامر حسام", date: "2025-01-01", comment: "تعامل راقي وخدمة فوق الوصف، أنصح بالتعامل معاه" },
+            { name: "نيفين أحمد", date: "2025-01-03", comment: "خدمة رائعة ومعاملة طيبة، الأستاذ فارس أمين" },
+            { name: "عادل محمد", date: "2025-01-05", comment: "الأستاذ فارس عنده ضمير في الشغل، شكراً جزيلاً" },
+            { name: "منال علي", date: "2025-01-08", comment: "تعامل ممتاز وخدمة سريعة، ربنا يوفقك" },
+            { name: "أيمن إبراهيم", date: "2025-01-10", comment: "خدمة موثوقة وأسعار عادلة، أنصح بالتعامل معاه" },
+            { name: "سناء خالد", date: "2025-01-12", comment: "المهندس فارس أمين وصادق، خدمة ممتازة" },
+            { name: "ماجد حسن", date: "2025-01-15", comment: "تعامل راقي وخدمة فوق الممتاز، شكراً يا أستاذ فارس" },
+            { name: "هند محمود", date: "2025-01-18", comment: "خدمة رائعة ومعاملة محترمة، ربنا يبارك له" },
+            { name: "سامح سالم", date: "2025-01-20", comment: "الأستاذ فارس عنده ضمير في الشغل، خدمة ممتازة" },
+            { name: "رحاب عادل", date: "2025-01-22", comment: "تعامل ممتاز وسعر كويس، أنصح بالتعامل معاه" },
+            { name: "باسم نبيل", date: "2025-01-25", comment: "خدمة سريعة وموثوقة، شكراً جزيلاً" },
+            { name: "نورهان فؤاد", date: "2025-01-28", comment: "المهندس فارس محترم جداً وأسعاره عادلة" },
+            { name: "شريف حمدي", date: "2025-02-01", comment: "تعامل راقي وخدمة فوق الوصف، ربنا يوفقك" },
+            { name: "إيناس أحمد", date: "2025-02-03", comment: "خدمة رائعة ومعاملة طيبة، الأستاذ فارس أمين" },
+            { name: "حازم محمد", date: "2025-02-05", comment: "الأستاذ فارس صادق وأمين، خدمة فوق الممتاز" },
+            { name: "سهير علي", date: "2025-02-08", comment: "تعامل ممتاز وخدمة سريعة، شكراً يا أستاذ فارس" },
+            { name: "رفعت إبراهيم", date: "2025-02-10", comment: "خدمة موثوقة وأسعار منصفة، أنصح بالتعامل معاه" },
+            { name: "عبير خالد", date: "2025-02-12", comment: "المهندس فارس عنده ضمير في الشغل، ربنا يبارك له" },
+            { name: "طلال حسن", date: "2025-02-15", comment: "تعامل راقي وخدمة ممتازة، شكراً جزيلاً" },
+            { name: "لمياء محمود", date: "2025-02-18", comment: "خدمة رائعة ومعاملة محترمة، الأستاذ فارس أمين" },
+            { name: "نبيل سالم", date: "2025-02-20", comment: "الأستاذ فارس أمين وصادق، خدمة فوق الممتاز" },
+            { name: "سميرة عادل", date: "2025-02-22", comment: "تعامل ممتاز وسعر كويس، ربنا يوفقك" },
+            { name: "فاروق نبيل", date: "2025-02-25", comment: "خدمة سريعة وموثوقة، أنصح بالتعامل معاه" },
+            { name: "زينب فؤاد", date: "2025-02-28", comment: "المهندس فارس محترم جداً وخدمته ممتازة" },
+            { name: "عصام حمدي", date: "2025-03-01", comment: "تعامل راقي وخدمة فوق الوصف، شكراً يا أستاذ فارس" },
+            { name: "كريمة أحمد", date: "2025-03-03", comment: "خدمة رائعة ومعاملة طيبة، ربنا يبارك له" },
+            { name: "سعد محمد", date: "2025-03-05", comment: "الأستاذ فارس عنده ضمير في الشغل، خدمة ممتازة" },
+            { name: "فايزة علي", date: "2025-03-08", comment: "تعامل ممتاز وأسعار عادلة، أنصح بالتعامل معاه" },
+            { name: "مراد إبراهيم", date: "2025-03-10", comment: "خدمة موثوقة وسريعة، شكراً جزيلاً" },
+            { name: "نجلاء خالد", date: "2025-03-12", comment: "المهندس فارس أمين وصادق، ربنا يوفقك" },
+            { name: "جابر حسن", date: "2025-03-15", comment: "تعامل راقي وخدمة فوق الممتاز، الأستاذ فارس أمين" },
+            { name: "وفاء محمود", date: "2025-03-18", comment: "خدمة رائعة ومعاملة محترمة، شكراً يا أستاذ فارس" },
+            { name: "رمضان سالم", date: "2025-03-20", comment: "الأستاذ فارس صادق وأمين، خدمة فوق الوصف" },
+            { name: "صفاء عادل", date: "2025-03-22", comment: "تعامل ممتاز وسعر كويس، أنصح بالتعامل معاه" },
+            { name: "حمادة نبيل", date: "2025-03-25", comment: "خدمة سريعة وموثوقة، ربنا يبارك له" },
+            { name: "أمل فؤاد", date: "2025-03-28", comment: "المهندس فارس محترم جداً وخدمته ممتازة" },
+            { name: "زكريا حمدي", date: "2025-04-01", comment: "تعامل راقي وخدمة فوق الممتاز، شكراً جزيلاً" },
+            { name: "سوسن أحمد", date: "2025-04-03", comment: "خدمة رائعة ومعاملة طيبة، الأستاذ فارس أمين" },
+            { name: "فتحي محمد", date: "2025-04-05", comment: "الأستاذ فارس عنده ضمير في الشغل، ربنا يوفقك" },
+            { name: "نادرة علي", date: "2025-04-08", comment: "تعامل ممتاز وأسعار منصفة، أنصح بالتعامل معاه" },
+            { name: "سليم إبراهيم", date: "2025-04-10", comment: "خدمة موثوقة وسريعة، شكراً يا أستاذ فارس" },
+            { name: "حنان خالد", date: "2025-04-12", comment: "المهندس فارس أمين وصادق، خدمة فوق الوصف" },
+            { name: "رجب حسن", date: "2025-04-15", comment: "تعامل راقي وخدمة ممتازة، ربنا يبارك له" },
+            { name: "عزة محمود", date: "2025-04-18", comment: "خدمة رائعة ومعاملة محترمة، الأستاذ فارس أمين" },
+            { name: "شعبان سالم", date: "2025-04-20", comment: "الأستاذ فارس صادق وأمين، خدمة فوق الممتاز" },
+            { name: "نعمة عادل", date: "2025-04-22", comment: "تعامل ممتاز وسعر كويس، أنصح بالتعامل معاه" },
+            { name: "محسن نبيل", date: "2025-04-25", comment: "خدمة سريعة وموثوقة، شكراً جزيلاً" },
+            { name: "بدرية فؤاد", date: "2025-04-28", comment: "المهندس فارس محترم جداً وخدمته ممتازة" },
+            { name: "عثمان حمدي", date: "2025-05-01", comment: "تعامل راقي وخدمة فوق الوصف، ربنا يوفقك" },
+            { name: "فريدة أحمد", date: "2025-05-03", comment: "خدمة رائعة ومعاملة طيبة، الأستاذ فارس أمين" },
+            { name: "حلمي محمد", date: "2025-05-05", comment: "الأستاذ فارس عنده ضمير في الشغل، شكراً يا أستاذ فارس" },
+            { name: "سعاد علي", date: "2025-05-08", comment: "تعامل ممتاز وأسعار عادلة، أنصح بالتعامل معاه" },
+            { name: "رشدي إبراهيم", date: "2025-05-10", comment: "خدمة موثوقة وسريعة، ربنا يبارك له" },
+            { name: "كوثر خالد", date: "2025-05-12", comment: "المهندس فارس أمين وصادق، خدمة فوق الممتاز" },
+            { name: "صبري حسن", date: "2025-05-15", comment: "تعامل راقي وخدمة ممتازة، شكراً جزيلاً" },
+            { name: "زهرة محمود", date: "2025-05-18", comment: "خدمة رائعة ومعاملة محترمة، الأستاذ فارس أمين" },
+            { name: "فهمي سالم", date: "2025-05-20", comment: "الأستاذ فارس صادق وأمين، خدمة فوق الوصف" },
+            { name: "نجوى عادل", date: "2025-05-22", comment: "تعامل ممتاز وسعر كويس، ربنا يوفقك" },
+            { name: "سيد نبيل", date: "2025-05-25", comment: "خدمة سريعة وموثوقة، أنصح بالتعامل معاه" },
+            { name: "ثريا فؤاد", date: "2025-05-28", comment: "المهندس فارس محترم جداً وخدمته ممتازة" },
+            { name: "عبدالحميد حمدي", date: "2025-06-01", comment: "تعامل راقي وخدمة فوق الممتاز، شكراً يا أستاذ فارس" },
+            { name: "فوزية أحمد", date: "2025-06-03", comment: "خدمة رائعة ومعاملة طيبة، ربنا يبارك له" },
+            { name: "عبدالعزيز محمد", date: "2025-06-05", comment: "الأستاذ فارس عنده ضمير في الشغل، خدمة ممتازة" },
+            { name: "نبوية علي", date: "2025-06-08", comment: "تعامل ممتاز وأسعار منصفة، الأستاذ فارس أمين" },
+            { name: "عبدالمنعم إبراهيم", date: "2025-06-10", comment: "خدمة موثوقة وسريعة، شكراً جزيلاً" },
+            { name: "صباح خالد", date: "2025-06-12", comment: "المهندس فارس أمين وصادق، ربنا يوفقك" },
+            { name: "عبدالرؤوف حسن", date: "2025-06-15", comment: "تعامل راقي وخدمة فوق الوصف، أنصح بالتعامل معاه" },
+            { name: "نوال محمود", date: "2025-06-18", comment: "خدمة رائعة ومعاملة محترمة، الأستاذ فارس أمين" },
+            { name: "عبدالغني سالم", date: "2025-06-20", comment: "الأستاذ فارس صادق وأمين، خدمة فوق الممتاز" },
+            { name: "جميلة عادل", date: "2025-06-22", comment: "تعامل ممتاز وسعر كويس، شكراً يا أستاذ فارس" },
+            { name: "عبدالحكيم نبيل", date: "2025-06-25", comment: "خدمة سريعة وموثوقة، ربنا يبارك له" },
+            { name: "رقية فؤاد", date: "2025-06-28", comment: "المهندس فارس محترم جداً وخدمته ممتازة" },
+            { name: "عبدالباسط حمدي", date: "2025-07-01", comment: "تعامل راقي وخدمة فوق الممتاز، أنصح بالتعامل معاه" },
+            { name: "خديجة أحمد", date: "2025-07-03", comment: "خدمة رائعة ومعاملة طيبة، الأستاذ فارس أمين" },
+            { name: "عبدالجليل محمد", date: "2025-07-05", comment: "الأستاذ فارس عنده ضمير في الشغل، شكراً جزيلاً" },
+            { name: "حياة علي", date: "2025-07-08", comment: "تعامل ممتاز وأسعار عادلة، ربنا يوفقك" },
+            { name: "عبدالوهاب إبراهيم", date: "2025-07-10", comment: "خدمة موثوقة وسريعة، أنصح بالتعامل معاه" },
+            { name: "عائشة خالد", date: "2025-07-12", comment: "المهندس فارس أمين وصادق، خدمة فوق الوصف" },
+            { name: "عبدالقادر حسن", date: "2025-07-15", comment: "تعامل راقي وخدمة ممتازة، شكراً يا أستاذ فارس" },
+            { name: "حسنية محمود", date: "2025-07-18", comment: "خدمة رائعة ومعاملة محترمة، ربنا يبارك له" },
+            { name: "عبدالناصر سالم", date: "2025-07-20", comment: "الأستاذ فارس صادق وأمين، خدمة فوق الممتاز" }
+        ];
+
+        // Load comments from localStorage
+        function loadComments() {
+            const savedComments = localStorage.getItem('alfaresComments');
+            if (savedComments) {
+                return [...sampleComments, ...JSON.parse(savedComments)];
+            }
+            return sampleComments;
+        }
+
+        // Save comment to localStorage
+        function saveComment(comment) {
+            const savedComments = localStorage.getItem('alfaresComments');
+            const comments = savedComments ? JSON.parse(savedComments) : [];
+            comments.push(comment);
+            localStorage.setItem('alfaresComments', JSON.stringify(comments));
+        }
+
+        // Display comments
+        function displayComments() {
+            const comments = loadComments();
+            const container = document.getElementById('commentsContainer');
+            
+            // Sort comments by date (newest first)
+            comments.sort((a, b) => new Date(b.date) - new Date(a.date));
+            
+            // Manual scroll: no duplication
+            container.innerHTML = comments.map(comment => `
+                <div class="ms-card p-6 mb-6 ms-comment-card">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 ms-blue flex items-center justify-center ml-3" style="border-radius: 5px;">
+                                <i class="fas fa-user text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg text-gray-800">${comment.name}</h4>
+                                <div class="flex text-yellow-500">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-sm text-gray-500">
+                            ${comment.date}
+                        </div>
+                    </div>
+                    <p class="text-gray-700 text-lg">${comment.comment}</p>
+                </div>
+            `).join('');
+        }
+
+        // Handle form submission
+        document.getElementById('commentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('userName').value;
+            const email = document.getElementById('userEmail').value;
+            const phone = document.getElementById('userPhone').value;
+            const comment = document.getElementById('userComment').value;
+            
+            const newComment = {
+                name: name,
+                date: new Date().toISOString().split('T')[0],
+                comment: comment
+            };
+            
+            saveComment(newComment);
+            displayComments();
+            
+            // Reset form
+            this.reset();
+            
+            // Show success message (UI toast)
+            showToast('تم إضافة تعليقك بنجاح! شكراً لك على ثقتك');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Toast helper
+        function showToast(message, timeout = 3000) {
+            const el = document.getElementById('toast');
+            if (!el) return;
+            el.textContent = message;
+            el.classList.add('show');
+            clearTimeout(window.__toastTimer);
+            window.__toastTimer = setTimeout(() => {
+                el.classList.remove('show');
+            }, timeout);
+        }
+
+        // Initialize comments display
+        displayComments();
+
+        // Microsoft-style entrance animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('ms-fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards for animation
+        document.querySelectorAll('.ms-card, .ms-service-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97c9a96995c7794b',t:'MTc1NzQ1MjExNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
