@@ -267,6 +267,15 @@
             pointer-events: auto;
         }
     </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/"
+  }
+}
+</script>
 </head>
 <body class="bg-white">
     <!-- Microsoft Style Navigation -->
@@ -283,6 +292,7 @@
                 <a href="#services" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">الخدمات</a>
                 <a href="#testimonials" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">الآراء</a>
                 <a href="#partners" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">الشركاء</a>
+                <a href="#download" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">تحميل التطبيق</a>
                 <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">التواصل</a>
             </div>
         </div>
@@ -612,8 +622,63 @@
         </div>
     </section>
 
+    <!-- Microsoft Style Download App Section -->
+    <section id="download" class="ms-section">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl md:text-6xl ms-title text-gray-800 mb-4">حمل التطبيق الآن</h2>
+                <p class="text-xl ms-subtitle max-w-2xl mx-auto">تجربة دفع إلكتروني متكاملة وآمنة في جيبك</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- App features -->
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 ms-blue text-white flex-shrink-0 flex items-center justify-center ml-4" style="border-radius: 5px;">
+                            <i class="fas fa-bolt text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-xl text-gray-800">أداء فوري</h3>
+                            <p class="text-gray-600 mt-1 text-lg">تنفيذ سريع لجميع عمليات الشحن والدفع بدون أي تأخير.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 ms-green text-white flex-shrink-0 flex items-center justify-center ml-4" style="border-radius: 5px;">
+                            <i class="fas fa-shield-alt text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-xl text-gray-800">أمان تام</h3>
+                            <p class="text-gray-600 mt-1 text-lg">نظام حماية متقدم يضمن سرية وأمان بياناتك ومعاملاتك المالية.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 ms-orange text-white flex-shrink-0 flex items-center justify-center ml-4" style="border-radius: 5px;">
+                            <i class="fas fa-headset text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-xl text-gray-800">دعم فني متكامل</h3>
+                            <p class="text-gray-600 mt-1 text-lg">فريق دعم متخصص جاهز لمساعدتك وحل أي مشكلة على مدار الساعة.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Image and download button -->
+                <div class="text-center p-8 ms-card">
+                    <img src="https://i.postimg.cc/NGNTSpWF/3.png" alt="شعار تطبيق الفارس" class="h-40 w-auto mx-auto mb-6">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">تطبيق الفارس للمدفوعات</h3>
+                    <p class="text-gray-600 mb-8">متوافق مع جميع أجهزة أندرويد</p>
+                    <a href="https://www.webtonative.com/api/v1/demo/download/UWnZmtt09FPwAHIgFp3l/ANDROID" 
+                       class="ms-button inline-flex items-center justify-center text-xl px-12 py-5 w-full">
+                        <i class="fab fa-android text-2xl ml-3"></i>
+                        تحميل التطبيق (APK)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Microsoft Style Contact Section -->
-    <section id="contact" class="ms-section">
+    <section id="contact" class="ms-section ms-section-alt">
         <div class="max-w-4xl mx-auto px-6 text-center">
             <div class="mb-16">
                 <h2 class="text-5xl md:text-6xl ms-title text-gray-800 mb-4">تواصل معنا</h2>
@@ -684,7 +749,7 @@
             { name: "عبدالناصر سالم", date: "2025-07-20", comment: "الأستاذ فارس صادق وأمين، خدمة فوق الممتاز" },
             { name: "حسنية محمود", date: "2025-07-18", comment: "خدمة رائعة ومعاملة محترمة، ربنا يبارك له" },
             { name: "عبدالقادر حسن", date: "2025-07-15", comment: "تعامل راقي وخدمة ممتازة، شكراً يا أستاذ فارس" },
-            { name: "عائشة خالد", date: "2025-07-12", comment: "ا��مهندس فارس أمين وصادق، خدمة فوق الوصف" },
+            { name: "عائشة خالد", date: "2025-07-12", comment: "المهندس فارس أمين وصادق، خدمة فوق الوصف" },
             { name: "عبدالوهاب إبراهيم", date: "2025-07-10", comment: "خدمة موثوقة وسريعة، أنصح بالتعامل معاه" },
             { name: "حياة علي", date: "2025-07-08", comment: "تعامل ممتاز وأسعار عادلة، ربنا يوفقك" },
             { name: "عبدالجليل محمد", date: "2025-07-05", comment: "الأستاذ فارس عنده ضمير في الشغل، شكراً جزيلاً" },
@@ -866,5 +931,5 @@
             observer.observe(card);
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97c9a96995c7794b',t:'MTc1NzQ1MjExNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</body>
 </html>
